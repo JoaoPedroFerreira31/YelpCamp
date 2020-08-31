@@ -17,9 +17,9 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
 //conectar mongoose a base de dados 
-//mongoose.connect("mongodb://localhost/yelp_camp_v11");
+//mongoose.connect(process.env.DATABASEURL);
 mongoose.connect("mongodb+srv://jpedro31:jpedro31@cluster0.zokrn.mongodb.net/yelpcamp?retryWrites=true&w=majority");
-//mongodb+srv://jpedro31:jpedro31@cluster0.zokrn.mongodb.net/yelpcamp?retryWrites=true&w=majority
+//console.log(process.env.DATABASEURL);
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -49,7 +49,7 @@ app.use(function(req, res, next){
 	res.locals.success = req.flash("success");  
 	next();
 });
-
+//console.log(process.env.PORT);
 
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
