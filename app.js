@@ -18,7 +18,6 @@ var indexRoutes = require("./routes/index");
 
 //conectar mongoose a base de dados 
 mongoose.connect(process.env.DATABASEURL);
-//mongoose.connect("mongodb+srv://jpedro31:jpedro31@cluster0.zokrn.mongodb.net/yelpcamp?retryWrites=true&w=majority");
 //console.log(process.env.DATABASEURL);
 
 
